@@ -63,7 +63,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 - Microverse
 - Hat tip to anyone whose code was used
-- Inspiration
 - etc
 
 
