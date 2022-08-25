@@ -1,3 +1,4 @@
+# rubocop:disable all
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -52,3 +53,4 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to likes_url
   end
 end
+# rubocop:enable all

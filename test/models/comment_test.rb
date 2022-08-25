@@ -1,3 +1,5 @@
+
+# rubocop:disable all
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -7,3 +9,4 @@ class CommentTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
+# rubocop:enable all

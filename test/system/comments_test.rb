@@ -1,3 +1,4 @@
+# rubocop:disable all
 # frozen_string_literal: true
 
 require 'application_system_test_case'
@@ -49,3 +50,4 @@ class CommentsTest < ApplicationSystemTestCase
     assert_text 'Comment was successfully destroyed'
   end
 end
+# rubocop:enable all

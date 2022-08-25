@@ -1,3 +1,5 @@
+
+# rubocop:disable all
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -52,3 +54,4 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to comments_url
   end
 end
+# rubocop:enable all

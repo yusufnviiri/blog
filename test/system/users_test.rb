@@ -1,3 +1,4 @@
+# rubocop:disable all
 # frozen_string_literal: true
 
 require 'application_system_test_case'
@@ -51,3 +52,4 @@ class UsersTest < ApplicationSystemTestCase
     assert_text 'User was successfully destroyed'
   end
 end
+# rubocop:enable all
