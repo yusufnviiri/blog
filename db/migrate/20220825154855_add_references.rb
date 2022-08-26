@@ -3,11 +3,12 @@
 
 class AddReferences < ActiveRecord::Migration[7.0]
   def change
-    add_reference :users, :comments, foreign_key: true, index: true
-    add_reference :posts, :comments, foreign_key: true, index: true
-    add_reference :likes, :posts, foreign_key: true, index: true
-    add_reference :users, :likes, foreign_key: true, index: true
-    add_reference :users, :posts, foreign_key: true, index: true
+    add_reference  :comments, :user, null: false,  foreign_key: true
+    add_reference  :comments, :post, null: false, foreign_key: true
+    add_reference  :likes, :post, null: false, foreign_key: true
+    add_reference  :likes,:user,null: false, foreign_key: true
+    add_reference  :posts,:user,null: false, foreign_key: true
+    
   end
 end
 # rubocop:enable all

@@ -1,3 +1,4 @@
+# rubocop:disable all
 # frozen_string_literal: true
 
 # This file is auto-generated from the current state of the database. Instead
@@ -17,60 +18,45 @@ ActiveRecord::Schema[7.0].define(version: 20_220_825_154_855) do
   enable_extension 'plpgsql'
 
   create_table 'comments', force: :cascade do |t|
-    t.integer 'AuthorId'
-    t.integer 'PostId'
-    t.text 'Text'
-    t.datetime 'UpdatedAt'
-    t.datetime 'CreatedAt'
+    t.text 'text'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.bigint 'user_id', null: false
+    t.bigint 'post_id', null: false
+    t.index ['post_id'], name: 'index_comments_on_post_id'
+    t.index ['user_id'], name: 'index_comments_on_user_id'
   end
 
   create_table 'likes', force: :cascade do |t|
-    t.integer 'AuthorId'
-    t.integer 'PostId'
-    t.datetime 'CreatedAt'
-    t.datetime 'UpdatedAt'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'posts_id'
-    t.index ['posts_id'], name: 'index_likes_on_posts_id'
+    t.bigint 'post_id', null: false
+    t.bigint 'user_id', null: false
+    t.index ['post_id'], name: 'index_likes_on_post_id'
+    t.index ['user_id'], name: 'index_likes_on_user_id'
   end
 
   create_table 'posts', force: :cascade do |t|
-    t.integer 'AuthorId'
-    t.text 'Title'
-    t.text 'Text'
-    t.datetime 'CreatedAt'
-    t.datetime 'UpdatedAt'
-    t.integer 'CommentsCounter'
-    t.integer 'LikesCounter'
+    t.text 'title'
+    t.text 'text'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'comments_id'
-    t.index ['comments_id'], name: 'index_posts_on_comments_id'
+    t.bigint 'user_id', null: false
+    t.index ['user_id'], name: 'index_posts_on_user_id'
   end
 
   create_table 'users', force: :cascade do |t|
-    t.text 'Name'
-    t.string 'Photo'
-    t.string 'Bio'
-    t.datetime 'UpdatedAt'
-    t.datetime 'CreatedAt'
-    t.integer 'PostsCounter'
+    t.text 'name'
+    t.string 'photo'
+    t.string 'bio'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'comments_id'
-    t.bigint 'likes_id'
-    t.bigint 'posts_id'
-    t.index ['comments_id'], name: 'index_users_on_comments_id'
-    t.index ['likes_id'], name: 'index_users_on_likes_id'
-    t.index ['posts_id'], name: 'index_users_on_posts_id'
   end
 
-  add_foreign_key 'likes', 'posts', column: 'posts_id'
-  add_foreign_key 'posts', 'comments', column: 'comments_id'
-  add_foreign_key 'users', 'comments', column: 'comments_id'
-  add_foreign_key 'users', 'likes', column: 'likes_id'
-  add_foreign_key 'users', 'posts', column: 'posts_id'
+  add_foreign_key 'comments', 'posts'
+  add_foreign_key 'comments', 'users'
+  add_foreign_key 'likes', 'posts'
+  add_foreign_key 'likes', 'users'
+  add_foreign_key 'posts', 'users'
 end
+# rubocop:enable all
