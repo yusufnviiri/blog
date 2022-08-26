@@ -3,4 +3,3 @@
 
 json.partial! 'posts/post', post: @post
 # rubocop:enable all
-
