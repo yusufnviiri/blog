@@ -1,5 +1,4 @@
-# rubocop:disable all
-# frozen_string_literal: true
+
 
 class AddReferences < ActiveRecord::Migration[7.0]
   def change
@@ -11,4 +10,3 @@ class AddReferences < ActiveRecord::Migration[7.0]
     
   end
 end
-# rubocop:enable all

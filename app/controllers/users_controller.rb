@@ -1,5 +1,4 @@
-# rubocop:disable all
-# frozen_string_literal: true
+
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
@@ -70,4 +69,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:Name, :Photo, :Bio, :UpdatedAt, :CreatedAt, :PostsCounter)
   end
 end
-# rubocop:enable all
+
