@@ -1,6 +1,3 @@
-# rubocop:disable all
-# frozen_string_literal: true
-
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[show edit update destroy]
 
@@ -70,4 +67,3 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:AuthorId, :PostId, :Text, :UpdateAt, :CreatedAt)
   end
 end
-# rubocop:enable all
