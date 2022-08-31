@@ -1,5 +1,3 @@
-
-
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
@@ -69,4 +67,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:AuthorId, :Title, :Text, :CreatedAt, :UpdatedAt, :CommentsCounter, :LikesCounter)
   end
 end
-
