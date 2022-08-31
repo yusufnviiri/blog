@@ -1,6 +1,3 @@
-# rubocop:disable all
-# frozen_string_literal: true
-
 require 'application_system_test_case'
 
 class PostsTest < ApplicationSystemTestCase
@@ -54,4 +51,3 @@ class PostsTest < ApplicationSystemTestCase
     assert_text 'Post was successfully destroyed'
   end
 end
-# rubocop:enable all

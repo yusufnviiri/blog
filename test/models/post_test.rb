@@ -1,6 +1,3 @@
-# rubocop:disable all
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
@@ -8,4 +5,3 @@ class PostTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
-# rubocop:enable all

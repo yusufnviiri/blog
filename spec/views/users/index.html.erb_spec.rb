@@ -1,7 +1,4 @@
-# rubocop:disable all
-# frozen_string_literal: true
 require 'rails_helper'
 RSpec.describe 'users/index.html.erb', type: :view do
   # pending "add some examples to (or delete) #{__FILE__}"
 end
-# rubocop:enable all

@@ -1,5 +1,4 @@
-# rubocop:disable all
-# frozen_string_literal: true
+
 
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -59,4 +58,3 @@ ActiveRecord::Schema[7.0].define(version: 20_220_825_154_855) do
   add_foreign_key 'likes', 'users'
   add_foreign_key 'posts', 'users'
 end
-# rubocop:enable all

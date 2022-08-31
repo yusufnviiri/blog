@@ -1,7 +1,3 @@
-# rubocop:disable all
-
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
@@ -10,4 +6,3 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 end
-# rubocop:enable all

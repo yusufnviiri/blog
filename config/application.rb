@@ -1,5 +1,4 @@
-# rubocop:disable all
-# frozen_string_literal: true
+
 
 require_relative 'boot'
 
@@ -23,4 +22,3 @@ module Blog
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
-# rubocop:enable all

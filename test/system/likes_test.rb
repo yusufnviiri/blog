@@ -1,6 +1,3 @@
-# rubocop:disable all
-# frozen_string_literal: true
-
 require 'application_system_test_case'
 
 class LikesTest < ApplicationSystemTestCase
@@ -48,4 +45,3 @@ class LikesTest < ApplicationSystemTestCase
     assert_text 'Like was successfully destroyed'
   end
 end
-# rubocop:enable all
