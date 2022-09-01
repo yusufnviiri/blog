@@ -1,11 +1,10 @@
 
 
 Rails.application.routes.draw do
-  resources :users
-  resources :likes
-  resources :posts
-  resources :comments
-  # get 'pages/index'
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show]
+  end
+
   root 'pages#index'
 
 end
