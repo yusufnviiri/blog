@@ -1,0 +1,29 @@
+<%= form_with model: [@user, @post] do |form| %>
+
+  <div>
+    <%= form.label :user_id, "User ID:" %>
+    <%= form.number_field :user_id, label: false %>
+  </div>
+
+  <div>
+    <%= form.label :title, "Post Title:" %>
+    <%= form.text_field :title, label: false %>
+  </div>
+
+  <div>
+    <%= form.label :text, "Post Content:" %>
+    <%= form.text_field :text, label: false %>
+  </div>
+
+  <div>
+    <%= form.label :comments_counter %>
+    <%= form.number_field :comments_counter, :value => 0 %>
+  </div>
+
+  <div>
+    <%= form.label :likes_counter %>
+    <%= form.number_field :likes_counter, :value => 0 %>
+  </div>
+    <%= form.submit "Add Post" %>
+  </div>
+<% end %>
