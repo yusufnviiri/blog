@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- .user {
+.user {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
