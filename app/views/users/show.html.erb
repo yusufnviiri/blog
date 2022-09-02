@@ -1,2 +1,33 @@
-<h4>Show all Authors and posts </h4>
+<h4>show in users </h4>
 <h3>  <%= link_to  "Home" ,root_path %></h3>
+<div class="users" >
+    <div class="user_data" >
+
+<div>
+<h5><%= @user.name%></h5> <h5>Posts Number:<%= @user.posts_counter%></h5>
+</div>
+<img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"/>
+   
+</div>
+
+
+<div class="user" >
+<h5>Bio</h5>
+<h5><%= @user.bio%></h5>
+</div>
+ <% @posts.each do |post| %>
+<div class="user" >
+<h5> Post#<%= post.id%></h5>
+<h5><%= post.text%></h5>
+<h5> Comments:<%= post.comments_counter%></h5>
+<h5> Likes:<%= post.likes_counter%></h5>
+
+</div>
+<% end %>
+<h3>  <%= link_to  "Show all posts" ,user_posts_path(@user.id) %></h3>
+
+
+
+</div>
+
+

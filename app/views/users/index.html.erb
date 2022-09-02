@@ -1,2 +1,18 @@
-<h4>show all users</h4>
+<h4>index in  users</h4>
 <h3>  <%= link_to  "Home" ,root_path %></h3>
+<div class="users" >
+
+  <% @users.each do |user| %>
+  <div class="user" >
+    <div class="user_data" >
+
+  <h2> <%= user.name%> </h2> 
+   <img class="photo" src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"/>
+</div>
+  
+  <h2> Number of posts <%= user.posts_counter%> </h2> 
+    <%= link_to "More details", user_path(user.id) %>
+</div>
+  <% end %>
+  
+</div>
