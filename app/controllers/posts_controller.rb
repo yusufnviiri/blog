@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.where(user_id: params[:user_id])
     @user = User.find(params[:user_id])
-    @comments = Comment.all
   end
 
   def show

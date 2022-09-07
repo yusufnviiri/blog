@@ -22,9 +22,12 @@
     <h3>  <%= link_to  "View Post" ,user_post_path(@user.id,post.id) %></h3>
     </div>
       <div class="user_comments" >
-
-  <h2> <%= @user.name %>:my first comment </h2> 
   </div>
+     <div class="comment-container">
+     <% post.last_five_comment.each do |comment| %>
+     <p><%= comment.user.name %>: <%= comment.text %></p>
+        <% end %>
+            </div>
   <% end %>
       <h3>  <%= link_to  "New post" ,new_user_post_path(@user.id) %></h3>
 
