@@ -1,0 +1,21 @@
+<%= form_with model: [@user, @post, @comment] do |form| %>
+
+  <div>
+    <%= form.label :user_id, "User ID:" %>
+    <%= form.number_field :user_id, label: false %>
+  </div>
+
+  <div>
+    <%= form.label :post_id, "Post ID:" %>
+    <%= form.text_field :post_id, label: false %>
+  </div>
+
+  <div>
+    <%= form.label :text, "Comment:" %>
+    <%= form.text_area :text, label: false %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Comment" %>
+  </div>
+<% end %>
