@@ -10,10 +10,7 @@ RSpec.describe 'Users', type: :request do
       get '/users'
       expect(response).to render_template('index')
     end
-    it 'renders the show template' do
-      get '/users/:id'
-      expect(response).to render_template('show')
-    end
+
     it 'renders the body template' do
       get '/users'
       expect(response.body).to include('Home')
