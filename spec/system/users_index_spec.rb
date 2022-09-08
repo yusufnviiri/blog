@@ -28,8 +28,9 @@ RSpec.describe 'User/index page', type: :system do
   end
 
   it 'directs you the users profile page' do
-    @user3 = User.create(name: 'Leclerc',
-                         photo: 'https://www.formula1.com/content/fom-website/en/drivers/charles-leclerc/_jcr_content/image.img.1920.medium.jpg/1646818893219.jpg', bio: 'Driver from Monaco.')
+    @user3 = User.create(name: 'coser',
+                         photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Andrew_Carnegie%2C_by_Theodore_Marceau.jpg/800px-Andrew_Carnegie%2C_by_Theodore_Marceau.jpg',
+                         bio: 'Industrialist.')
     visit '/'
     click_on @user3.name
     expect(page).to have_current_path("/users/#{@user3.id}")
