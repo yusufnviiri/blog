@@ -39,8 +39,10 @@ RSpec.describe 'User integrations', type: :feature do
     post = create(:post, user:)
     create(:comment, post:)
     create(:comment, post:)
+    create(:comment, post:)
+
     visit user_posts_path(user)
-    expect(page).to have_content('Posts counter')
+    expect(page).to have_content('This is my first comment', count: 3)
   end
 
   it 'displays total number of likes' do
@@ -56,6 +58,13 @@ RSpec.describe 'User integrations', type: :feature do
     create(:post, user:)
     visit user_posts_path(user)
     click_link 'View Post'
+    expect(current_path).to eq(new_user_posts_path(user))
+  end
+  it 'redirects view all posts' do
+    user = create(:user)
+    create(:post, user:)
+    visit user_posts_path(user)
+    click_button 'Pagination'
     expect(current_path).to eq(new_user_posts_path(user))
   end
 end

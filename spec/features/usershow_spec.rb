@@ -37,7 +37,7 @@ RSpec.describe 'User integrations', type: :feature do
   it 'redirects to all user posts ' do
     user = create(:user)
     visit user_path(user)
-    click_link 'Show all posts'
+    click_link 'See all posts'
     expect(current_path).to eq(user_posts_path(user))
   end
   it 'redirects to  user show page of the user ' do
