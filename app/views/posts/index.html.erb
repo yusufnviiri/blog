@@ -1,0 +1,36 @@
+<h4>index in  posts</h4>
+<h3>  <%= link_to  "Home" ,root_path() %></h3>
+<div class="users" >
+  <div class="user_data" >
+<div>
+<h2> <%= @user.name %> </h2> 
+
+
+    <h2>Posts counter <%= @user.posts_counter %> </h2>  
+    </div>
+     <img class="photo" src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"/>
+</div>
+   
+
+  <% @posts.each do |post| %>
+  <div class="user" >
+  <h2> <%= post.text%> </h2> 
+  <%= link_to "show", user_post_path(post.user_id,post.id) %>
+
+  <h5> User Id: <%= post.user_id%> </h5> 
+    <h5> Likes number <%= post.likes_counter%> </h5> 
+    <h3>  <%= link_to  "View Post" ,user_post_path(@user.id,post.id) %></h3>
+    </div>
+      <div class="user_comments" >
+  </div>
+     <div class="comment-container">
+     <% post.last_five_comment.each do |comment| %>
+     <p><%= comment.user.name %>: <%= comment.text %></p>
+        <% end %>
+            </div>
+  <% end %>
+      <h3>  <%= link_to  "New post" ,new_user_post_path(@user.id) %></h3>
+
+</div>
+
+<%= button_to  "pagination"  ,user_posts_path(@user.id) %>
