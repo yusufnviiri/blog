@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Comments', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+  describe 'comment related requests' do
+    it 'creates a comment' do
+      user = create(:user)
+      post = create(:post, user:)
+      get "/users/#{user.id}/posts/#{post.id}/comments/new"
+      expect(response).to render_template('new')
+    end
   end
 end

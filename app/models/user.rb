@@ -5,6 +5,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def three_most_recent_posts
-    posts.order(created_at: :desc).limit(3)
+    posts.includes(:user).order(created_at: :desc).limit(3)
   end
 end

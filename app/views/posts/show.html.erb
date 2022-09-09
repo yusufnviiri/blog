@@ -12,8 +12,8 @@
   <h2> Likes <%= @post.likes_counter%> </h2> 
  
 </div>
-      <h3>  <%= link_to  "New comment" ,new_user_post_comment_path(@user.id,@post.id) %></h3>
-      <h3>  <%= link_to  "Like Post" ,new_user_post_like_path(@user.id,@post.id) %></h3>
+      <h3>  <%= link_to  "Add comment" ,new_user_post_comment_path(@user.id,@post.id) %></h3>
+      <h3>  <%= link_to  "Add Like" ,new_user_post_like_path(@user.id,@post.id) %></h3>
 
 </div>
 <% @post.comments.each do |comment| %>

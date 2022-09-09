@@ -1,7 +1,12 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe 'Likes', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+  describe 'like related requests' do
+    it 'creates a like' do
+      user = create(:user)
+      post = create(:post, user:)
+      get "/users/#{user.id}/posts/#{post.id}/likes/new"
+      expect(response).to render_template('new')
+    end
   end
 end
