@@ -7,7 +7,7 @@ RSpec.describe Post, type: :model do
                      bio: 'a short bio', posts_counter: 0)
     @post = @user.posts.build(title: 'Lorem ipsum', text: 'some posts made', comments_counter: 0, likes_counter: 0)
   end
-  
+
   it 'is not valid without a title' do
     @post.title = nil
     expect(@post).to_not be_valid
@@ -36,7 +36,7 @@ RSpec.describe Post, type: :model do
     @post.likes_counter = 1.1
     expect(@post).to_not be_valid
   end
- 
+
   it 'updates the posts_counter' do
     expect(@user.posts_counter).to eq(0)
   end

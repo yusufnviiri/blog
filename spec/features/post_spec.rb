@@ -2,12 +2,11 @@ require 'spec_helper'
 RSpec.describe 'Post integrations', type: :feature do
   it 'displays all posts' do
     user = create(:user)
-    create(:post, user:)  
+    create(:post, user:)
     visit user_posts_path(user)
     expect(page).to have_content('Number of posts', count: 0)
   end
-  
- 
+
   it 'displays user profile' do
     user = create(:user)
     visit user_path(user)

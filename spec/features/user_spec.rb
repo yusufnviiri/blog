@@ -6,13 +6,13 @@ RSpec.describe 'User integrations', type: :feature do
     visit users_path
     expect(page).to have_content('Andrew Carnegie')
   end
- 
+
   it 'displays user profile' do
     user = create(:user)
     visit user_path(user)
     expect(page).to have_content('Andrew Carnegie')
   end
-  
+
   it 'redirects to create new post page when user clicks on "New Post" link' do
     user = create(:user)
     create(:post, user:)
@@ -39,12 +39,10 @@ RSpec.describe 'User integrations', type: :feature do
     create(:post, user:)
     visit users_path(user)
     click_link 'More details'
-
     expect(current_path).to eq(user_path(user))
   end
   it 'redirects to post page when user clicks on  post content link' do
     user = create(:user)
-    post = create(:post, user:)
     visit user_path(user)
     click_link 'Show all posts'
     expect(current_path).to eq(user_posts_path(user))

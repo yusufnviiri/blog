@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
     user = create(:user)
     expect(user.posts_counter).to eq(0)
   end
- 
+
   it 'displays the three most recent posts' do
     user = create(:user)
     create(:post, user:)
