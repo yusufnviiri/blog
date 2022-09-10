@@ -1,0 +1,28 @@
+
+<h2> database setup</h2>
+
+     
+<ul>
+
+  <%= link_to "Sign Up" ,new_user_registration_path, class: "nav-link" %>
+        </li>
+        <% if user_signed_in? %>
+        <h3>  <%= link_to  "Show all Authors" ,users_path %></h3>
+
+         <li >
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-sm" %>
+ </li>
+<% else  %>
+       <li > 
+        <%= link_to "Log in" ,new_user_session_path   %>
+ </li>
+
+
+<% end %>
+
+</ul>
+
+
+
+
+
